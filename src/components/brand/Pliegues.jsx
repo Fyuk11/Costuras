@@ -1,6 +1,6 @@
 // src/components/brand/Pliegues.jsx
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FigCaption } from './FigCaption';
 
 const FRANJAS = [
@@ -56,10 +56,23 @@ const FRANJAS = [
 
 export const Pliegues = () => {
   const [activa, setActiva] = useState(0);
+  const navigate = useNavigate();
+
+  // Manejador específico para los clics en mobile (Acordeón de dos pasos)
+  const handleMobileClick = (e, index, id) => {
+    if (activa !== index) {
+      // Primer toque: solo se expande y previene la navegación
+      e.preventDefault();
+      setActiva(index);
+    } else {
+      // Segundo toque (estando ya expandida): navega a la colección
+      navigate(`/coleccion/${id}`);
+    }
+  };
 
   return (
     <div className="w-full my-8">
-      {/* DESKTOP: FLEX CON TRANSICIÓN DE EXPANSIÓN Y NAVEGACIÓN A COLECCIÓN */}
+      {/* DESKTOP: FRANJAS HORIZONTALES CON EXPANSIÓN POR HOVER */}
       <div className="hidden md:flex h-[60vh] min-h-[420px] max-h-[640px] w-full border border-[#2B2B28] overflow-hidden bg-[#D8CDB8]">
         {FRANJAS.map((f, index) => {
           const isSelected = activa === index;
@@ -97,38 +110,45 @@ export const Pliegues = () => {
         })}
       </div>
 
-      {/* MOBILE: ACORDEÓN VERTICAL NAVEGABLE */}
+      {/* MOBILE: ACORDEÓN VERTICAL DE DOS PASOS (TOCAR PARA EXPANDIR / SEGUNDO TOCAR PARA INGRESAR) */}
       <div className="md:hidden flex flex-col border border-[#2B2B28] overflow-hidden">
         {FRANJAS.map((f, index) => {
           const isSelected = activa === index;
           return (
-            <Link
+            <div
               key={f.id}
-              to={`/coleccion/${f.id}`}
-              onClick={() => setActiva(index)}
-              className="relative transition-[height] duration-500 overflow-hidden border-b last:border-b-0 border-[#2B2B28] bg-[#D8CDB8]"
-              style={{ height: isSelected ? '320px' : '64px' }}
+              onClick={(e) => handleMobileClick(e, index, f.id)}
+              className={`relative transition-all duration-500 overflow-hidden border-b last:border-b-0 border-[#2B2B28] bg-[#D8CDB8] cursor-pointer ${
+                isSelected ? 'h-52' : 'h-16'
+              }`}
             >
               <img
                 src={f.img}
                 alt={f.titulo}
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-[#2B2B28]/30" />
+              <div className={`absolute inset-0 transition-colors duration-500 ${isSelected ? 'bg-[#2B2B28]/40' : 'bg-[#2B2B28]/60'}`} />
+              
               <div className="relative z-10 p-4 h-full flex flex-col justify-between text-[#F7F3EB]">
-                <span className="font-display italic text-lg text-[#5E6B4A]">
-                  {f.fig} — {f.titulo}
-                </span>
+                <div className="flex items-center justify-between">
+                  <span className="font-display text-sm tracking-widest text-[#F7F3EB] uppercase">
+                    {f.fig} — {f.titulo}
+                  </span>
+                  <span className="text-xs font-body text-[#5E6B4A] bg-[#F7F3EB] px-2 py-0.5">
+                    {isSelected ? '✦' : '+'}
+                  </span>
+                </div>
+
                 {isSelected && (
-                  <div className="space-y-1 pt-4">
-                    <p className="text-xs font-body">Desde ${f.precio} ARS</p>
-                    <span className="inline-block text-xs font-body font-medium uppercase tracking-widest text-[#5E6B4A] underline">
+                  <div className="space-y-2 pt-2 animate-fadeIn">
+                    <p className="text-xs font-body text-[#EFE9DF]">Desde ${f.precio} ARS</p>
+                    <span className="inline-block text-[11px] font-body font-bold uppercase tracking-widest text-[#F7F3EB] underline bg-[#2B2B28]/60 px-2.5 py-1">
                       Ingresar a la colección →
                     </span>
                   </div>
                 )}
               </div>
-            </Link>
+            </div>
           );
         })}
       </div>

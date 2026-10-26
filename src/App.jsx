@@ -14,7 +14,7 @@ import { RecomendadorPopUp } from './components/brand/RecomendadorPopUp';
 import { CombosPage } from './routes/CombosPage';
 
 import configData from './data/config.json';
-import { ShoppingBag, MessageCircle, Share2, Globe } from 'lucide-react';
+import { ShoppingBag, MessageCircle, Share2, Globe, Menu, X } from 'lucide-react';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -40,6 +40,12 @@ function Header() {
   const { toggleCart, getTotalItems } = useCart();
   const totalItems = getTotalItems();
   const location = useLocation();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Cierra el menú mobile al cambiar de ruta
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
 
   const handleNavClick = (e, targetPath) => {
     if (targetPath === '/' && location.pathname === '/') {
@@ -51,16 +57,27 @@ function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-30 bg-[#EFE9DF]/95 backdrop-blur-xs border-b border-[#2B2B28] py-4 px-6 sm:px-12 flex items-center justify-between">
-      <Link to="/" onClick={(e) => handleNavClick(e, '/')} className="cursor-pointer">
+    <header className="sticky top-0 z-40 bg-[#EFE9DF]/95 backdrop-blur-xs border-b border-[#2B2B28] py-4 px-6 sm:px-12 flex items-center justify-between">
+      {/* BOTÓN HAMBURGUESA PARA MOBILE */}
+      <button
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        className="md:hidden text-[#2B2B28] p-1 focus:outline-none cursor-pointer"
+        aria-label="Abrir menú"
+      >
+        {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+      </button>
+
+      {/* LOGOTIPO */}
+      <Link to="/" onClick={(e) => handleNavClick(e, '/')} className="cursor-pointer text-center md:text-left">
         <span className="text-[10px] font-body font-medium uppercase tracking-[0.2em] text-[#5E6B4A] block">
           // {configData.brandName.toUpperCase()}
         </span>
-        <h1 className="text-xl sm:text-2xl font-display text-[#2B2B28] font-normal">
+        <h1 className="text-lg sm:text-2xl font-display text-[#2B2B28] font-normal">
           Textiles & Confección A Medida
         </h1>
       </Link>
 
+      {/* NAVEGACIÓN DESKTOP */}
       <nav className="hidden md:flex items-center gap-8 text-xs font-body font-medium uppercase tracking-[0.12em] text-[#4A4437]">
         <Link to="/" onClick={(e) => handleNavClick(e, '/')} className="hover:text-[#2B2B28] transition-colors cursor-pointer">
           Inicio
@@ -70,9 +87,10 @@ function Header() {
         <Link to="/combos" onClick={(e) => handleNavClick(e, '/combos')} className="hover:text-[#2B2B28] transition-colors">Combos</Link>
       </nav>
 
+      {/* BOTÓN CARRITO / PEDIDO */}
       <button
         onClick={toggleCart}
-        className="bg-[#2B2B28] text-[#F7F3EB] border border-[#2B2B28] px-4 py-2 text-xs font-body font-medium uppercase tracking-[0.1em] flex items-center gap-2.5 hover:bg-[#5E6B4A] transition-all cursor-pointer shadow-sm"
+        className="bg-[#2B2B28] text-[#F7F3EB] border border-[#2B2B28] px-3 sm:px-4 py-2 text-xs font-body font-medium uppercase tracking-[0.1em] flex items-center gap-2.5 hover:bg-[#5E6B4A] transition-all cursor-pointer shadow-sm"
       >
         <ShoppingBag className="w-4 h-4 text-[#EFE9DF]" />
         <span className="hidden sm:inline">Mi Pedido</span>
@@ -80,6 +98,35 @@ function Header() {
           {totalItems}
         </span>
       </button>
+
+      {/* MENÚ MÓVIL DESPLEGABLE */}
+      {mobileMenuOpen && (
+        <div className="absolute top-full left-0 w-full bg-[#EFE9DF] border-b border-[#2B2B28] shadow-xl py-6 px-8 flex flex-col gap-6 md:hidden z-50 animate-fadeIn">
+          <nav className="flex flex-col gap-4 text-sm font-body font-medium uppercase tracking-[0.15em] text-[#2B2B28]">
+            <Link to="/" onClick={(e) => handleNavClick(e, '/')} className="hover:text-[#5E6B4A] transition-colors border-b border-[#2B2B28]/10 pb-2">
+              Inicio
+            </Link>
+            <Link to="/tienda" onClick={(e) => handleNavClick(e, '/tienda')} className="hover:text-[#5E6B4A] transition-colors border-b border-[#2B2B28]/10 pb-2">
+              Catálogo
+            </Link>
+            <Link to="/colecciones" onClick={(e) => handleNavClick(e, '/colecciones')} className="hover:text-[#5E6B4A] transition-colors border-b border-[#2B2B28]/10 pb-2">
+              Colecciones
+            </Link>
+            <Link to="/combos" onClick={(e) => handleNavClick(e, '/combos')} className="hover:text-[#5E6B4A] transition-colors pb-2">
+              Combos
+            </Link>
+          </nav>
+
+          <div className="pt-4 border-t border-[#2B2B28]/20 flex items-center justify-around text-xs">
+            <a href="https://wa.me/5491121652703" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 font-bold text-[#2B2B28]">
+              <MessageCircle className="w-4 h-4 text-[#5E6B4A]" /> WhatsApp
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 font-bold text-[#2B2B28]">
+              <Share2 className="w-4 h-4 text-[#5E6B4A]" /> Instagram
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
@@ -106,8 +153,7 @@ export function MainLayout() {
         <Route path="/producto/:handle" element={<ProductDetail />} />
       </Routes>
 
-      {/* FOOTER SEGURO SIN ERRORES DE LIBRERÍA */}
-      <footer className="bg-[#EFE9DF] py-14 pb-28 sm:pb-16 border-t border-[#2B2B28] text-[#4A4437] text-xs font-body">
+      <footer className="bg-[#EFE9DF] py-14 pb-28 sm:pb-16 border-ts border-[#2B2B28] text-[#4A4437] text-xs font-body">
         <div className="max-w-6xl mx-auto px-6 sm:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
           
           <div className="space-y-1 text-center md:text-left">
@@ -116,28 +162,13 @@ export function MainLayout() {
           </div>
 
           <div className="flex items-center gap-6">
-            <a
-              href="https://wa.me/5491100000000"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-[#2B2B28] hover:text-[#5E6B4A] transition-colors"
-            >
+            <a href="https://wa.me/5491121652703" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-[#2B2B28] hover:text-[#5E6B4A] transition-colors">
               <MessageCircle className="w-3.5 h-3.5 text-[#5E6B4A]" /> WhatsApp
             </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-[#2B2B28] hover:text-[#5E6B4A] transition-colors"
-            >
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-[#2B2B28] hover:text-[#5E6B4A] transition-colors">
               <Share2 className="w-3.5 h-3.5 text-[#5E6B4A]" /> Instagram
             </a>
-            <a
-              href="https://tiktok.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-[#2B2B28] hover:text-[#5E6B4A] transition-colors"
-            >
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-[#2B2B28] hover:text-[#5E6B4A] transition-colors">
               <Globe className="w-3.5 h-3.5 text-[#5E6B4A]" /> TikTok
             </a>
           </div>
