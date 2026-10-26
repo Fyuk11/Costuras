@@ -49,16 +49,17 @@ export const CartDrawer = () => {
             className="absolute inset-0 bg-[#2B2B28]/60 backdrop-blur-sm"
           />
 
-          <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
+          {/* CONTENEDOR PRINCIPAL ADAPTADO A MOBILE Y DESKTOP */}
+          <div className="fixed inset-y-0 right-0 w-full max-w-full sm:max-w-md flex justify-end">
             <motion.div
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ duration: 0.3, ease: [0.2, 0.7, 0.2, 1] }}
-              className="w-screen max-w-md bg-[#F7F3EB] border-l border-[#2B2B28] shadow-2xl flex flex-col justify-between relative z-50"
+              className="w-full sm:w-[440px] bg-[#F7F3EB] border-l border-[#2B2B28] shadow-2xl flex flex-col justify-between relative z-50 h-full"
             >
               {/* HEADER */}
-              <div className="p-6 border-b border-[#2B2B28] flex items-center justify-between bg-[#EFE9DF]">
+              <div className="p-5 sm:p-6 border-b border-[#2B2B28] flex items-center justify-between bg-[#EFE9DF]">
                 <div>
                   <span className="text-[10px] font-body font-medium uppercase tracking-[0.2em] text-[#5E6B4A] block">
                     // TALLER SERENO
@@ -76,8 +77,8 @@ export const CartDrawer = () => {
                 </button>
               </div>
 
-              {/* LISTA */}
-              <div className="flex-1 overflow-y-auto p-6 space-y-6 bg-[#F7F3EB]">
+              {/* LISTA Y FORMULARIO */}
+              <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6 bg-[#F7F3EB]">
                 {cart.length === 0 ? (
                   <div className="h-full flex flex-col items-center justify-center text-center space-y-4 py-12">
                     <div className="w-12 h-12 border border-[#2B2B28] flex items-center justify-center text-[#4A4437]">
@@ -102,19 +103,19 @@ export const CartDrawer = () => {
                         return (
                           <div
                             key={item.key}
-                            className="bg-[#EFE9DF] p-4 border border-[#2B2B28] flex gap-4 items-center justify-between"
+                            className="bg-[#EFE9DF] p-3 sm:p-4 border border-[#2B2B28] flex gap-3 sm:gap-4 items-center justify-between"
                           >
                             <img
                               src={img}
                               alt={prod.title}
-                              className="w-16 h-16 object-cover border border-[#2B2B28]/30 shrink-0"
+                              className="w-14 h-14 sm:w-16 sm:h-16 object-cover border border-[#2B2B28]/30 shrink-0"
                             />
 
                             <div className="flex-1 min-w-0">
-                              <h4 className="text-sm font-display text-[#2B2B28] truncate">
+                              <h4 className="text-xs sm:text-sm font-display text-[#2B2B28] truncate">
                                 {prod.title}
                               </h4>
-                              <p className="text-[11px] font-body text-[#5E6B4A]">
+                              <p className="text-[10px] sm:text-[11px] font-body text-[#5E6B4A]">
                                 {varTitle}
                               </p>
 
@@ -211,22 +212,22 @@ export const CartDrawer = () => {
                 )}
               </div>
 
-              {/* FOOTER 100% SÓLIDO SIN TRANSPARENCIA */}
+              {/* FOOTER DEL CARRITO (TOTAL + BOTONES) */}
               {cart.length > 0 && (
-                <div className="p-6 border-t border-[#2B2B28] bg-[#EFE9DF] space-y-4 relative z-20">
-                  <div className="flex justify-between items-end">
+                <div className="p-4 sm:p-6 border-t border-[#2B2B28] bg-[#EFE9DF] space-y-4 relative z-20">
+                  <div className="flex justify-between items-center">
                     <div>
                       <span className="text-[10px] font-body text-[#4A4437] uppercase tracking-wider block">
                         Total Estimado
                       </span>
-                      <span className="text-2xl font-display text-[#2B2B28] font-normal">
+                      <span className="text-xl sm:text-2xl font-display text-[#2B2B28] font-normal">
                         ${getTotalPrice().toLocaleString('es-AR')} ARS
                       </span>
                     </div>
 
                     <button
                       onClick={clearCart}
-                      className="text-xs font-body text-[#4A4437] hover:text-[#9A3B26] underline cursor-pointer"
+                      className="text-xs font-body text-[#4A4437] hover:text-[#9A3B26] underline cursor-pointer py-1 px-2"
                     >
                       Vaciar pedido
                     </button>
@@ -234,7 +235,7 @@ export const CartDrawer = () => {
 
                   <button
                     onClick={handleEnviarPedido}
-                    className="w-full bg-[#2B2B28] hover:bg-[#5E6B4A] text-[#EFE9DF] font-body text-xs font-medium uppercase tracking-[0.14em] py-4 border border-[#2B2B28] flex items-center justify-center gap-2 transition-all cursor-pointer"
+                    className="w-full bg-[#2B2B28] hover:bg-[#5E6B4A] text-[#EFE9DF] font-body text-xs font-medium uppercase tracking-[0.14em] py-3.5 sm:py-4 border border-[#2B2B28] flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm"
                   >
                     <Send className="w-4 h-4 text-[#5E6B4A]" />
                     Enviar Pedido por WhatsApp
