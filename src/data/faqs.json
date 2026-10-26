@@ -1,0 +1,18 @@
+[
+    {
+      "q": "¿Cómo realizo mi pedido?",
+      "a": "Seleccionás los productos en la web y los sumás a 'Mi Pedido'. Al tocar 'Enviar por WhatsApp', se genera un mensaje detallado con tus piezas elegidas. Gabriela confirma stock y fecha de entrega directa."
+    },
+    {
+      "q": "¿Cómo funcionan los arreglos y trabajos a medida?",
+      "a": "Consultás por la sección 'A Medida' enviando las dimensiones o el tipo de arreglo. Se abona un 50% de seña para iniciar la confección y el 50% restante contra entrega."
+    },
+    {
+      "q": "¿Hacen envíos a todo el país?",
+      "a": "Sí, coordinamos envíos por correo a todo el país o podés retirar sin costo por nuestros puntos de retiro en Ituzaingó Centro y Castelar Sur."
+    },
+    {
+      "q": "¿Qué medios de pago aceptan?",
+      "a": "Los pagos se coordinan directamente por WhatsApp una vez confirmado el pedido (transferencia bancaria o efectivo al retirar)."
+    }
+  ]

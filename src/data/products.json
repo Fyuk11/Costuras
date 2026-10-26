@@ -1,0 +1,387 @@
+[
+  {
+    "handle": "lona-pampa",
+    "title": "Lona Pampa Impermeable",
+    "category": "Lonas",
+    "collection": "aire-libre",
+    "description": "Base impermeable para aislar la humedad y loneta estampada de alta densidad. Incluye elásticos de sujetado para guardado compacto.",
+    "price": 24500,
+    "compareAtPrice": null,
+    "featured": true,
+    "isNew": true,
+    "fabric": {
+      "composition": "Loneta 100% algodón superior / Base P.V.C. impermeable",
+      "care": "Lavar a máquina con agua fría. No centrifugar."
+    },
+    "variants": [
+      {
+        "id": "lona-pampa-m",
+        "title": "150 x 100 cm (Mediana)",
+        "options": { "medida": "150 x 100 cm" },
+        "price": 18500,
+        "sku": "LON-PAM-M",
+        "available": true
+      },
+      {
+        "id": "lona-pampa-xl",
+        "title": "200 x 150 cm (Grande XL)",
+        "options": { "medida": "200 x 150 cm" },
+        "price": 24500,
+        "sku": "LON-PAM-XL",
+        "available": true
+      }
+    ],
+    "images": [
+      { "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1000&auto=format&fit=crop", "alt": "Lona Pampa en el pasto" },
+      { "src": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1000&auto=format&fit=crop", "alt": "Detalle de doblado Lona Pampa" }
+    ],
+    "bundleOf": [],
+    "madeToOrder": false
+  },
+  {
+    "handle": "lona-roja",
+    "title": "Lona Roja Impermeable",
+    "category": "Lonas",
+    "collection": "aire-libre",
+    "description": "Base impermeable para aislar la humedad y loneta estampada de alta densidad. Incluye elásticos de sujetado para guardado compacto.",
+    "price": 24500,
+    "compareAtPrice": null,
+    "featured": true,
+    "isNew": true,
+    "fabric": {
+      "composition": "Loneta 100% algodón superior / Base P.V.C. impermeable",
+      "care": "Lavar a máquina con agua fría. No centrifugar."
+    },
+    "variants": [
+      {
+        "id": "lona-roja-m",
+        "title": "180 x 130 cm (Mediana)",
+        "options": { "medida": "180 x 130 cm" },
+        "price": 18500,
+        "sku": "LON-ROJ-M",
+        "available": true
+      },
+      {
+        "id": "lona-roja-xl",
+        "title": "220 x 200 cm (Grande XL)",
+        "options": { "medida": "220 x 200 cm" },
+        "price": 24500,
+        "sku": "LON-ROJ-XL",
+        "available": true
+      }
+    ],
+    "images": [
+      { "src": "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1000&auto=format&fit=crop", "alt": "Lona Roja al aire libre" }
+    ],
+    "bundleOf": [],
+    "madeToOrder": false
+  },
+  {
+    "handle": "kit-matero-sereno",
+    "title": "Set Matero Completo (3 Piezas)",
+    "category": "Sets Materos",
+    "collection": "aire-libre",
+    "description": "Yerbero hermético antifugas, azucarero a juego y funda acolchada para el mate. Interior lavable e impermeable.",
+    "price": 16000,
+    "compareAtPrice": null,
+    "featured": true,
+    "isNew": false,
+    "fabric": {
+      "composition": "Tusor de algodón pesado / Forro náutico impermeable",
+      "care": "Limpiar interior con paño húmedo."
+    },
+    "variants": [
+      {
+        "id": "kit-matero-std",
+        "title": "Set Completo (3 Piezas)",
+        "options": { "modelo": "Estándar" },
+        "price": 16000,
+        "sku": "MAT-SET-01",
+        "available": true
+      }
+    ],
+    "images": [
+      { "src": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1000&auto=format&fit=crop", "alt": "Set Matero en lino" }
+    ],
+    "bundleOf": [],
+    "madeToOrder": false
+  },
+  {
+    "handle": "almohadon-matero",
+    "title": "Almohadón Matero Acolchado",
+    "category": "Almohadones",
+    "collection": "aire-libre",
+    "description": "Estructura firme con cavidades a medida para termo, mate y yerbero. Evita vuelcos en el auto o el sillón.",
+    "price": 22000,
+    "compareAtPrice": null,
+    "featured": true,
+    "isNew": true,
+    "fabric": {
+      "composition": "Tusor pesado de algodón / Relleno de alta densidad",
+      "care": "Funda desmontable lavable a máquina."
+    },
+    "variants": [
+      {
+        "id": "alm-mat-casa",
+        "title": "Formato Casa / Sillón (4 Cavidades)",
+        "options": { "uso": "Casa" },
+        "price": 22000,
+        "sku": "ALM-MAT-CAS",
+        "available": true
+      },
+      {
+        "id": "alm-mat-auto",
+        "title": "Formato Auto Compacto (Ajustable)",
+        "options": { "uso": "Auto" },
+        "price": 18500,
+        "sku": "ALM-MAT-AUT",
+        "available": true
+      }
+    ],
+    "images": [
+      { "src": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?q=80&w=1000&auto=format&fit=crop", "alt": "Almohadón Matero Casa" }
+    ],
+    "bundleOf": [],
+    "madeToOrder": false
+  },
+  {
+    "handle": "cambiador-portatil-bebe",
+    "title": "Cambiador Portátil Impermeable Plegable",
+    "category": "Bebés",
+    "collection": "mundo-bebes",
+    "description": "Cambiador acolchado con interior totalmente impermeable de fácil limpieza. Se pliega de forma compacta para el bolso materno.",
+    "price": 14500,
+    "compareAtPrice": 18000,
+    "featured": true,
+    "isNew": true,
+    "fabric": {
+      "composition": "Tusor externo / Interior cristal impermeable",
+      "care": "Limpieza con paño húmedo o lavado delicado."
+    },
+    "variants": [
+      {
+        "id": "cambiador-std",
+        "title": "Estándar (70x50 cm)",
+        "options": { "medida": "70x50 cm" },
+        "price": 14500,
+        "sku": "BEB-CAM-01",
+        "available": true
+      }
+    ],
+    "images": [
+      { "src": "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?q=80&w=1000&auto=format&fit=crop", "alt": "Cambiador portátil" }
+    ],
+    "bundleOf": [],
+    "madeToOrder": false
+  },
+  {
+    "handle": "organizador-colgante-cuna",
+    "title": "Organizador Colgante de Cuna / Pañalera",
+    "category": "Bebés",
+    "collection": "mundo-bebes",
+    "description": "Bolsillo triple organizador para colgar en la cuna o cambiador. Mantiene pañales, óleos y cremas siempre ordenados.",
+    "price": 19000,
+    "compareAtPrice": null,
+    "featured": false,
+    "isNew": true,
+    "fabric": {
+      "composition": "Tusor pesado de algodón con tiras reforzadas",
+      "care": "Apto lavarropas en ciclo suave."
+    },
+    "variants": [
+      {
+        "id": "org-cuna-std",
+        "title": "Triple Bolsillo",
+        "options": { "modelo": "Triple" },
+        "price": 19000,
+        "sku": "BEB-ORG-01",
+        "available": true
+      }
+    ],
+    "images": [
+      { "src": "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?q=80&w=1000&auto=format&fit=crop", "alt": "Organizador colgante" }
+    ],
+    "bundleOf": [],
+    "madeToOrder": false
+  },
+  {
+    "handle": "par-almohadones-nordicos",
+    "title": "Par de Almohadones Nórdicos en Tusor",
+    "category": "Almohadones",
+    "collection": "almohadones",
+    "description": "Set de dos fundas de almohadón con solapa oculta y costuras de alta durabilidad. Confeccionados en puro tusor prelavado.",
+    "price": 22000,
+    "compareAtPrice": 26000,
+    "featured": true,
+    "isNew": false,
+    "fabric": {
+      "composition": "Tusor 100% algodón / Relleno de vellón siliconado",
+      "care": "Lavar a máquina con agua fría."
+    },
+    "variants": [
+      {
+        "id": "alm-nordico-50",
+        "title": "50 x 50 cm (Par con relleno)",
+        "options": { "medida": "50 x 50 cm" },
+        "price": 22000,
+        "sku": "ALM-NOR-50",
+        "available": true
+      }
+    ],
+    "images": [
+      { "src": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?q=80&w=1000&auto=format&fit=crop", "alt": "Almohadones Nórdicos" }
+    ],
+    "bundleOf": [],
+    "madeToOrder": false
+  },
+  {
+    "handle": "almohadon-lumbar",
+    "title": "Almohadón Lumbar Rectangular",
+    "category": "Almohadones",
+    "collection": "almohadones",
+    "description": "Almohadón alargado ideal para apoyo lumbar en sillones o pie de cama. Textura suave y noble al tacto.",
+    "price": 15000,
+    "compareAtPrice": null,
+    "featured": false,
+    "isNew": true,
+    "fabric": {
+      "composition": "Tusor liviano / Relleno mullido",
+      "care": "Lavado delicado."
+    },
+    "variants": [
+      {
+        "id": "alm-lumbar-60",
+        "title": "60 x 30 cm",
+        "options": { "medida": "60 x 30 cm" },
+        "price": 15000,
+        "sku": "ALM-LUM-60",
+        "available": true
+      }
+    ],
+    "images": [
+      { "src": "https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?q=80&w=1000&auto=format&fit=crop", "alt": "Almohadón lumbar" }
+    ],
+    "bundleOf": [],
+    "madeToOrder": false
+  },
+  {
+    "handle": "cortinas-gasa-algodon",
+    "title": "Cortinas de Gasa de Algodón con Presillas",
+    "category": "Hogar",
+    "collection": "hogar-bano",
+    "description": "Paño doble de gasa de algodón liviana que deja pasar la luz natural generando un clima cálido y relajado en tus ambientes.",
+    "price": 45000,
+    "compareAtPrice": 52000,
+    "featured": true,
+    "isNew": false,
+    "fabric": {
+      "composition": "Gasa 100% algodón",
+      "care": "Lavar a mano o ciclo muy suave."
+    },
+    "variants": [
+      {
+        "id": "cortina-par",
+        "title": "Juego de 2 Paños (140 x 210 cm c/u)",
+        "options": { "medida": "140 x 210 cm" },
+        "price": 45000,
+        "sku": "COR-GAS-01",
+        "available": true
+      }
+    ],
+    "images": [
+      { "src": "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1000&auto=format&fit=crop", "alt": "Cortinas de gasa" }
+    ],
+    "bundleOf": [],
+    "madeToOrder": false
+  },
+  {
+    "handle": "toallon-waffle",
+    "title": "Toallón Waffle de Algodón Puro",
+    "category": "Baño",
+    "collection": "hogar-bano",
+    "description": "Toallón de alta capacidad de absorción con trama en panal de abeja (waffle). Secado rápido y textura sumamente suave.",
+    "price": 21000,
+    "compareAtPrice": null,
+    "featured": false,
+    "isNew": true,
+    "fabric": {
+      "composition": "Nido de abeja 100% algodón",
+      "care": "Apto lavarropas."
+    },
+    "variants": [
+      {
+        "id": "toallon-std",
+        "title": "150 x 90 cm",
+        "options": { "medida": "150 x 90 cm" },
+        "price": 21000,
+        "sku": "TOA-WAF-01",
+        "available": true
+      }
+    ],
+    "images": [
+      { "src": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1000&auto=format&fit=crop", "alt": "Toallón waffle" }
+    ],
+    "bundleOf": [],
+    "madeToOrder": false
+  },
+  {
+    "handle": "combo-dia-de-plaza",
+    "title": "Combo Día de Plaza & Picnic",
+    "category": "Combos",
+    "collection": "combos",
+    "description": "El set definitivo para disfrutar al aire libre. Incluye Lona Pampa XL (200x150cm) + Set Matero Completo + Almohadón Matero Casa.",
+    "price": 52500,
+    "compareAtPrice": 62500,
+    "featured": true,
+    "isNew": true,
+    "fabric": {
+      "composition": "Varias composiciones según piezas incluidas",
+      "care": "Ver etiquetas individuales"
+    },
+    "variants": [
+      {
+        "id": "combo-plaza-full",
+        "title": "Pack Completo Picnic",
+        "options": { "pack": "Full" },
+        "price": 52500,
+        "sku": "CMB-PLAZA-01",
+        "available": true
+      }
+    ],
+    "images": [
+      { "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1000&auto=format&fit=crop", "alt": "Combo Día de Plaza" }
+    ],
+    "bundleOf": ["lona-pampa", "kit-matero-sereno", "almohadon-matero"],
+    "madeToOrder": false
+  },
+  {
+    "handle": "combo-mundo-bebes",
+    "title": "Set Esencial Mundo Bebés",
+    "category": "Combos",
+    "collection": "combos",
+    "description": "Pack ideal para regalar o armar el cochecito. Incluye Cambiador Portátil Impermeable + Organizador Colgante de Cuna.",
+    "price": 29500,
+    "compareAtPrice": 33500,
+    "featured": true,
+    "isNew": true,
+    "fabric": {
+      "composition": "Tusor de algodón y tejidos impermeables",
+      "care": "Lavado delicado a máquina"
+    },
+    "variants": [
+      {
+        "id": "combo-bebe-pack",
+        "title": "Set 2 Piezas Bebé",
+        "options": { "pack": "Dúo" },
+        "price": 29500,
+        "sku": "CMB-BEB-01",
+        "available": true
+      }
+    ],
+    "images": [
+      { "src": "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?q=80&w=1000&auto=format&fit=crop", "alt": "Set Esencial Mundo Bebés" }
+    ],
+    "bundleOf": ["cambiador-portatil-bebe", "organizador-colgante-cuna"],
+    "madeToOrder": false
+  }
+]

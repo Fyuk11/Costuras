@@ -1,0 +1,71 @@
+/* src/styles/tokens.css */
+:root {
+    /* Color Palette - Taller Sereno */
+    --c-arena: #EFE9DF;       /* Fondo general */
+    --c-arena-2: #D8CDB8;     /* Superficies, placeholders, filetes suaves */
+    --c-marfil: #F7F3EB;      /* Fichas y tarjetas elevadas */
+    --c-carbon: #2B2B28;      /* Texto, CTA primario, filetes */
+    --c-oliva: #5E6B4A;       /* Acento: numerales, enlaces, CTA secundario */
+    --c-pie: #4A4437;         /* Texto sobre arena-2 (pies de foto) */
+    --c-alerta: #9A3B26;      /* Errores de formulario */
+  
+    /* Tipografía */
+    --f-display: 'Cormorant Garamond', Georgia, serif;
+    --f-body: 'Jost', system-ui, sans-serif;
+  
+    /* Formas y líneas */
+    --r: 0px;                 /* Bordes rectos minimalistas */
+    --linea: 1px solid var(--c-carbon);
+    --linea-suave: 1px solid var(--c-arena-2);
+  
+    /* Transiciones */
+    --ease: cubic-bezier(.2, .7, .2, 1);
+    --t-lento: 800ms;
+    --t-medio: 400ms;
+    --t-rapido: 200ms;
+  }
+  
+  /* Integración Tailwind v4 Theme Extension */
+  @import "tailwindcss";
+  
+  @theme {
+    --color-arena: #EFE9DF;
+    --color-arena-2: #D8CDB8;
+    --color-marfil: #F7F3EB;
+    --color-carbon: #2B2B28;
+    --color-oliva: #5E6B4A;
+    --color-pie: #4A4437;
+    --color-alerta: #9A3B26;
+  
+    --font-display: "Cormorant Garamond", Georgia, serif;
+    --font-body: "Jost", system-ui, sans-serif;
+  }
+  
+  @layer base {
+    body {
+      background-color: var(--c-arena);
+      color: var(--c-carbon);
+      font-family: var(--f-body);
+      overflow-x: hidden;
+    }
+  
+    /* Forzar bordes totalmente rectos estilo Taller Sereno */
+    *, ::before, ::after {
+      border-radius: 0px !important;
+    }
+  }
+  
+  /* Scrollbar editorial */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--c-arena);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--c-arena-2);
+    border: 1px solid var(--c-carbon);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--c-oliva);
+  }
